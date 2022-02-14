@@ -1,0 +1,13 @@
+{
+    ".localization-header":"Localization Component.",
+    "#localization-text":"The component localization-dropdown is an integrated language switch component that maked is posbile to switch tag/labels on any element by ussing the CSS selector properties.",
+    "#examples":"Examples",
+    "#localization-examples p:nth-child(2)":"Using the id tag: #localization-examples with the 2nd child selector on p.",
+    "#localization-example-id":"Using the id tag: #localization-examples-id.",
+    "#loc-comp-1-text":"Localization example component 1 text.",
+    "#loc-comp-2-text":"Localization example component 2 text.",
+    "#localization-btn-false":"Load Component 2",
+    "#localization-btn-true":"Load Component 1",
+    "labelFalse":"Component 1 Loaded",
+    "labelTrue":"Component 2 Loaded"
+}
