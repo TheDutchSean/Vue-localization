@@ -1,8 +1,9 @@
 <template>
   <div id="nav">
     <router-link to="/">Home</router-link> |
+    <router-link to="/Dynamic">Dynamic</router-link> |
     <router-link to="/Localization">Localization</router-link> |
-    <LangBtnDd id="langBtn" label="locBtnLabel" :route="$route.name" :update="setLoc"/> 
+    <LangBtnDd id="langBtn" label="locBtnLabel" :route="$route.name"/> 
   </div>
   
   <router-view />

@@ -17,10 +17,7 @@
 <script>
 import locComp1 from "../components/localization-comp-1.vue";
 import locComp2 from "../components/localization-comp-2.vue";
-import { langSet } from "@/modules/modules.js";
-import { getLangLabel } from "@/modules/modules.js";
-
-let myVariable = "test";
+import localization from "@/scripts/localization.js";
 
 export default {
   name: "Localization",
@@ -41,7 +38,7 @@ export default {
     this.setLabel(); 
   },
   beforeUpdate(){
-    langSet(`/localization/${this.$options.name}/`, this.$store.getters.getLang);
+    this.$store.commit("storeLocUpdate",true);
     this.setLabel(); 
   },
   updated(){},
@@ -60,10 +57,10 @@ export default {
     },
     async setLabel(){
       if(!this.component){
-        this.label = await getLangLabel("labelFalse", `/localization/${this.$options.name}/`, this.$store.getters.getLang)
+        this.label = await localization.switchLabel("labelFalse", this.$options.name, this.$store.getters.getLang)
       }
       else{
-        this.label = await getLangLabel("labelTrue", `/localization/${this.$options.name}/`, this.$store.getters.getLang)
+        this.label = await localization.switchLabel("labelTrue", this.$options.name, this.$store.getters.getLang)
       }
     }
   },

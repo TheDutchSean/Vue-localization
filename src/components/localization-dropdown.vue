@@ -39,9 +39,8 @@
 </template>
 
 <script>
-import {getBrowserLang} from '../scripts/localization.js';
 import languages from '../localization/languages.json';
-import { langSet } from "@/scripts/localization.js";
+import localization from "@/scripts/localization.js";
 
 export default {
   name: "locBtnDd",
@@ -54,7 +53,6 @@ export default {
     },
     label:String,
     route:String,
-    update:Boolean
   },
   data(){
     return{
@@ -70,18 +68,18 @@ export default {
       this.updateLang();
     },
     updateLang(){
-      langSet("/localization/app/", this.selectedLang);
+      localization.langSet("app", this.selectedLang, this.route);
       if(this.route !== undefined){
-        langSet(`/localization/${this.route}/`, this.selectedLang);
+        localization.langSet(this.route, this.selectedLang, this.route);
       }
     }
   },
-  mounted() {
+  created() {
       // set default lang / get default from brower if not exist set englih to default
       for(let lang in this.languages){
-        if(lang === getBrowserLang()){
-          this.$store.commit("storeLang",getBrowserLang());
-          this.selectedLang = getBrowserLang();
+        if(lang.startsWith(localization.getBrowser())){
+          this.$store.commit("storeLang",lang);
+          this.selectedLang = lang;
           break;
         }
         else{
@@ -95,9 +93,10 @@ export default {
     route: function(){
       this.updateLang();
     },
-    update: function(){
-      if(this.update){
+    '$store.getters.getLocUpdate': function(){
+      if(this.$store.getters.getLocUpdate){
         this.updateLang();
+        this.$store.commit("storeLocUpdate",false);
       }
     } 
   }

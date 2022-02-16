@@ -1,0 +1,13 @@
+{
+    ".localization-header":"Localization Component.",
+    "#localization-text":"De component localization-dropdown is een geintrigeerde taal wissel component mogelijk maakt te wisselen tussen tags/labels op iedere element door middle van de CSS selector eigenchappen.",
+    "#examples":"Voorbeelden",
+    "#localization-examples p:nth-child(2)":"Doormiddle van de id tag: #localization-examples met de 2de child selector op p.",
+    "#localization-example-id":"Doormiddle van de id tag: #localization-examples-id.",
+    "#loc-comp-1-text":"Localization voorbeeld component 1 tekst.",
+    "#loc-comp-2-text":"Localization voorbeeld component 2 tekst.",
+    "#localization-btn-false":"Laad Component 2",
+    "#localization-btn-true":"Laad Component 1",
+    "labelFalse":"Component 1 geladen",
+    "labelTrue":"Component 2 geladen"
+}

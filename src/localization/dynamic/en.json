@@ -1,0 +1,4 @@
+{
+    "#dynamic-text":"On this page the string is dynamic: ${myVariable}.",
+    "#number":"And i am an dynamic number: ${number}."
+}

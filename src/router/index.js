@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import Localization from "../views/Localization.vue";
+import Dynamic from "../views/Dynamic.vue";
 
 
 export const routes = [
@@ -8,6 +9,11 @@ export const routes = [
     path: "/",
     name: "Home",
     component: Home,
+  },
+  {
+    path: "/Dynamic",
+    name: "Dynamic",
+    component: Dynamic,
   },
   {
     path: "/Localization",
