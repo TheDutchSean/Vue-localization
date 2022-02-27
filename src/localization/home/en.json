@@ -1,6 +1,3 @@
 {
-    "#info-text":"This is the info page text.",
-    ".info-header":"This is the info page header.",
-    "#disclaimer":"This is the info page disclaimer",
-    "h2":"i dont exist"
+    "#text":"This paragraph is in english."
 }

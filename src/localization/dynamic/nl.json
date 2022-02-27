@@ -1,4 +1,5 @@
 {
+    ".Dynamic p":"Door ${variable} te gebruiken kan een string dynamisch gemaakt worden. Deze variable moet in de export van MyView.vue worden geplaatst.",
     "#dynamic-text":"Op deze pagina is de string dynamisch: ${myVariable}.",
     "#number":"En ik ben een dynamisch nummer: ${number}."
 }

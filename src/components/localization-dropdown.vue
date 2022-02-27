@@ -22,83 +22,83 @@
 }
 
 /* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 </style>
 
 <template>
-    <div :class='"dropdown "'>
-      <button :class='"dropbtn"' id="locBtnLabel">{{label}}</button>
-      <div :class='"dropdown-content "'>
-        <template v-for='(language, key) in languages' :key=key>
-          <template v-if='key != selectedLang'>
-            <div :class='"dropdown-link "' @mouseup="storeLang(key)">{{language}}</div>
-          </template>
-        </template>  
-      </div>
+  <div :class="'dropdown '">
+    <button :class="'dropbtn'" id="locBtnLabel">{{ label }}</button>
+    <div :class="'dropdown-content '">
+      <template v-for="(language, key) in languages" :key="key">
+        <template v-if="key != selectedLang">
+          <div :class="'dropdown-link '" @mouseup="storeLang(key)">
+            {{ language }}
+          </div>
+        </template>
+      </template>
     </div>
+  </div>
 </template>
 
 <script>
-import languages from '../localization/languages.json';
+import languages from "../localization/languages.json";
 import localization from "@/scripts/localization.js";
 
 export default {
   name: "locBtnDd",
   props: {
-    class:{
-      container:String,
-      button:String,
-      content:String,
-      link:String,
+    class: {
+      container: String,
+      button: String,
+      content: String,
+      link: String,
     },
-    label:String,
-    route:String,
+    label: String,
+    route: String,
   },
-  data(){
-    return{
+  data() {
+    return {
       languages: languages,
-      selectedLang:"en",  
-    }
+      selectedLang: "en",
+    };
   },
-  beforeMount(){}, 
+  beforeMount() {},
   methods: {
-    storeLang(value){
-      this.$store.commit("storeLang",value);
+    storeLang(value) {
+      this.$store.commit("storeLang", value);
       this.selectedLang = value;
       this.updateLang();
     },
-    updateLang(){
-      localization.langSet("app", this.selectedLang, this.route);
-      if(this.route !== undefined){
-        localization.langSet(this.route, this.selectedLang, this.route);
-      }
-    }
+    updateLang() {
+      localization.langSet(this.route, this.selectedLang, this.route);
+    },
   },
   created() {
-      // set default lang / get default from brower if not exist set englih to default
-      for(let lang in this.languages){
-        if(lang.startsWith(localization.getBrowser())){
-          this.$store.commit("storeLang",lang);
-          this.selectedLang = lang;
-          break;
-        }
-        else{
-          this.$store.commit("storeLang","en");
-          this.selectedLang = "en";
-        }
+    // set default lang / get default from brower if not exist set englih to default
+    for (let lang in this.languages) {
+      if (lang.startsWith(localization.getBrowser())) {
+        this.$store.commit("storeLang", lang);
+        this.selectedLang = lang;
+        break;
+      } else {
+        this.$store.commit("storeLang", "en");
+        this.selectedLang = "en";
       }
-      this.updateLang();
+    }
+    // this.updateLang();
   },
-  watch:{
-    route: function(){
+  watch: {
+    route: function () {
       this.updateLang();
     },
-    '$store.getters.getLocUpdate': function(){
-      if(this.$store.getters.getLocUpdate){
+    "$store.getters.getLocUpdate": function () {
+      if (this.$store.getters.getLocUpdate) {
         this.updateLang();
-        this.$store.commit("storeLocUpdate",false);
+        this.$store.commit("storeLocUpdate", false);
       }
-    } 
-  }
+    },
+  },
 };
 </script>

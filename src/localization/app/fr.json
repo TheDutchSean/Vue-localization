@@ -1,8 +1,4 @@
 {
     "#locBtnLabel":"Langues",
-    "#text":"Donner un coup de main!",
-    ".header":"This is an header.",
-    "h2":"i dont exist",
-    "#scripts-test":"Welcome to scripts.",
-    "#div p":"insert child"
+    "h2":"i dont exist"
 }

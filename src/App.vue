@@ -3,9 +3,9 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/Dynamic">Dynamic</router-link> |
     <router-link to="/Localization">Localization</router-link> |
-    <LangBtnDd id="langBtn" label="locBtnLabel" :route="$route.name"/> 
+    <router-link to="/Numbers">Numbers</router-link> |
+    <LangBtnDd id="langBtn" label="locBtnLabel" :route="$route.name" />
   </div>
-  
   <router-view />
 </template>
 
@@ -13,27 +13,24 @@
 import LangBtnDd from "@/components/localization-dropdown.vue";
 
 export default {
-  data(){
+  data() {
     return {
-      setLoc: false,
-      myVariable:"This text will be inserted"
-    // end return
+      // end return
     };
-  // end data  
+    // end data
   },
   components: {
-    LangBtnDd
+    LangBtnDd,
   },
-  created(){},
-  mounted(){},
-  updated(){},
-  methods:{},
-  computed:{},
-  watch:{}
-  // end export    
-} 
+  created() {},
+  mounted() {},
+  updated() {},
+  methods: {},
+  computed: {},
+  watch: {},
+  // end export
+};
 </script>
-
 
 <style>
 #app {
@@ -49,7 +46,6 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
 }
 
 #nav a {
@@ -61,7 +57,6 @@ export default {
   color: #42b983;
 }
 
-
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
   position: relative;
@@ -69,7 +64,7 @@ export default {
 }
 
 .dropbtn {
-  background-color: #04AA6D;
+  background-color: #04aa6d;
   color: white;
   padding: 16px;
   font-size: 16px;
@@ -84,7 +79,7 @@ export default {
   z-index: 1;
   background-color: #f1f1f1;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
 /* Links inside the dropdown */
@@ -108,7 +103,11 @@ export default {
   background-color: #ddd;
 }
 
-.dropdown-link:hover {background-color: rgb(151, 150, 150);}
+.dropdown-link:hover {
+  background-color: rgb(151, 150, 150);
+}
 
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
 </style>

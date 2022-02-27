@@ -1,5 +1,3 @@
 {
-    "#info-text":"Dit is de info pagina tekst.",
-    ".info-header":"Dit is de info pagina header.",
-    "#disclaimer":"Dit is de info pagina disclaimer"
+    "#text":"Deze paragraaf is in het Nederlands."
 }

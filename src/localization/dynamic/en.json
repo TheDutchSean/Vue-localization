@@ -1,4 +1,5 @@
 {
+    ".Dynamic p":"By using ${variable} a string can be made dynamic. This variable should be in the export of the MyView.vue.",
     "#dynamic-text":"On this page the string is dynamic: ${myVariable}.",
     "#number":"And i am an dynamic number: ${number}."
 }

@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import Localization from "../views/Localization.vue";
 import Dynamic from "../views/Dynamic.vue";
-
+import Numbers from "../views/Numbers.vue";
 
 export const routes = [
   {
@@ -19,6 +19,11 @@ export const routes = [
     path: "/Localization",
     name: "Localization",
     component: Localization,
+  },
+  {
+    path: "/Numbers",
+    name: "Numbers",
+    component: Numbers,
   },
 ];
 
