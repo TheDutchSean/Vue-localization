@@ -3,7 +3,7 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/Dynamic">Dynamic</router-link> |
     <router-link to="/Localization">Localization</router-link> |
-    <router-link to="/Numbers">Numbers</router-link> |
+    <router-link to="/Currency">Currency</router-link> |
     <LangBtnDd id="langBtn" label="locBtnLabel" :route="$route.name" />
   </div>
   <router-view />

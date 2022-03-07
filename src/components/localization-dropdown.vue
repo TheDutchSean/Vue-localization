@@ -62,31 +62,49 @@ export default {
     return {
       languages: languages,
       selectedLang: "en",
+      previousLang: "",
     };
   },
   beforeMount() {},
+  mounted() {},
   methods: {
     storeLang(value) {
+      this.previousLang = this.selectedLang;
+      this.$store.commit("storePreLang", this.selectedLang);
       this.$store.commit("storeLang", value);
       this.selectedLang = value;
       this.updateLang();
     },
     updateLang() {
-      localization.langSet(this.route, this.selectedLang, this.route);
+      localization.locSet(
+        this.route,
+        this.selectedLang,
+        this.previousLang,
+        this.$store.getters.getExRate,
+        this.route
+      );
+    },
+    async getCurExchange() {
+      const reponse = await localization.getExRate();
+      this.$store.commit("storeExRate", reponse.rates);
     },
   },
   created() {
+    this.getCurExchange(); // activate after testing
+
     // set default lang / get default from brower if not exist set englih to default
     for (let lang in this.languages) {
       if (lang.startsWith(localization.getBrowser())) {
         this.$store.commit("storeLang", lang);
         this.selectedLang = lang;
+        this.previousLang = lang;
         break;
       } else {
-        this.$store.commit("storeLang", "en");
-        this.selectedLang = "en";
+        this.$store.commit("storeLang", "en-EU");
+        this.selectedLang = "en-EU";
       }
     }
+
     // this.updateLang();
   },
   watch: {

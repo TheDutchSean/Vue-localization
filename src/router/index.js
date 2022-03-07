@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import Localization from "../views/Localization.vue";
 import Dynamic from "../views/Dynamic.vue";
-import Numbers from "../views/Numbers.vue";
+import Currency from "../views/Currency.vue";
 
 export const routes = [
   {
@@ -21,9 +21,9 @@ export const routes = [
     component: Localization,
   },
   {
-    path: "/Numbers",
-    name: "Numbers",
-    component: Numbers,
+    path: "/Currency",
+    name: "Currency",
+    component: Currency,
   },
 ];
 

@@ -1,5 +1,0 @@
-{
-    "h2":"Number formateren",
-    ".numbers p":"Door het gebruiken van #{variable} kan een nummer als currency geformateerd worden. Deze variable moet in de export van MyView.vue worden geplaatst.",
-    "#numbers-test":"#{myNumber}"
-}

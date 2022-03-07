@@ -1,18 +1,15 @@
 <template>
-  <p id="loc-comp-1-text">#loc-comp-1-text</p>  
+  <p id="loc-comp-1-text">#loc-comp-1-text</p>
 </template>
 
 <script>
-import { langSet } from "@/modules/modules.js";
-
 export default {
   name: "LocComp1",
-  data(){
-    return{}
+  data() {
+    return {};
   },
-  created(){}
+  created() {},
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
