@@ -3,6 +3,7 @@ import Home from "../views/Home.vue";
 import Localization from "../views/Localization.vue";
 import Dynamic from "../views/Dynamic.vue";
 import Currency from "../views/Currency.vue";
+import Installation from "../views/Installation.vue";
 
 export const routes = [
   {
@@ -24,6 +25,11 @@ export const routes = [
     path: "/Currency",
     name: "Currency",
     component: Currency,
+  },
+  {
+    path: "/Installation",
+    name: "Installation",
+    component: Installation,
   },
 ];
 

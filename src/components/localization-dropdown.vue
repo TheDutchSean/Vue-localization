@@ -45,6 +45,7 @@
 <script>
 import languages from "../localization/languages.json";
 import localization from "@/scripts/localization.js";
+import config from "@/localization/config.json";
 
 export default {
   name: "locBtnDd",
@@ -90,8 +91,10 @@ export default {
     },
   },
   created() {
-    this.getCurExchange(); // activate after testing
-
+    // get currency exchange data
+    if (config.enableCurExchange === true) {
+      this.getCurExchange();
+    }
     // set default lang / get default from brower if not exist set englih to default
     for (let lang in this.languages) {
       if (lang.startsWith(localization.getBrowser())) {

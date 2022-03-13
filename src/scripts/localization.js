@@ -1,7 +1,7 @@
+import config from "../localization/config.json";
+
 export function getBrowserLang() {
   const langFull = navigator.language;
-  // const lang = langFull.split("-");
-  // return lang[0];
   return langFull;
 }
 
@@ -890,13 +890,15 @@ async function formatCurrency(
               `${variable} not found in module ..src/views/${route}.vue not found.`
             );
           } else {
-            data[variable] = calcCurrency(
-              data[variable],
-              selectedLang,
-              previousLang,
-              currencys,
-              exChange
-            );
+            if (config.enableCurExchange === true) {
+              data[variable] = calcCurrency(
+                data[variable],
+                selectedLang,
+                previousLang,
+                currencys,
+                exChange
+              );
+            }
             result = result.replace(
               inputVariables[i],
               convCurrency(
