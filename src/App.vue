@@ -1,7 +1,7 @@
 <template>
   <div id="nav">
     <router-link to="/">Home</router-link> |
-    <router-link to="/Installation">Installation</router-link> |
+    <!-- <router-link to="/Installation">Installation</router-link> | -->
     <router-link to="/Dynamic">Dynamic</router-link> |
     <router-link to="/Localization">Localization</router-link> |
     <router-link to="/Currency">Currency</router-link> |

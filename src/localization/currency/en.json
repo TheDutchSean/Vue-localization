@@ -1,5 +1,6 @@
 {
-    ".Currency h2":"Number formating",
-    ".Currency p":"By using #{variable} you can define a number that has to be formatted as a currency. This variable should be in the export of the MyView.vue.",
-    "#Currency-Ex":"#{myNumber}"
+    ".Currency h2":"Currency formating",
+    ".Currency p":"By using <b>#{variable}</b> you can define a number that has to be formatted as a currency. This variable should be in the export of the MyView.vue.",
+    "#Currency-Ex":"#{myNumber}",
+    ".Currency p:nth-child(5)":"Its also posible for the VUE Localization Component to calculate the new value of the amount according to the current exchange rate.<br>This functon can be enabled by setting enableCurExchange to true in ../localization/conifg.json."
 }

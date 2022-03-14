@@ -70,7 +70,7 @@ async function setLocalizaton(
           previousLang,
           exChange
         );
-        nodes[index].innerText = String(formatedCurrency);
+        nodes[index].innerHTML = String(formatedCurrency);
       }
     }
   }
@@ -125,7 +125,7 @@ async function setLanguage(path, selectedLang, route, mode = "req") {
       const nrNodes = nodes.length;
       for (let index = 0; index < nrNodes; index++) {
         const dynamicStr = await VUEDynamicStr(localization[element], route);
-        nodes[index].innerText = String(dynamicStr);
+        nodes[index].innerHTML = String(dynamicStr);
       }
     }
   }
@@ -196,7 +196,7 @@ export async function langSetSlim(path, selectedLang, route, mode = "req") {
       const nrNodes = nodes.length;
       for (let index = 0; index < nrNodes; index++) {
         const dynamicStr = await VUEDynamicStr(localization[element], route);
-        nodes[index].innerText = String(dynamicStr);
+        nodes[index].innerHTML = String(dynamicStr);
       }
     }
   }

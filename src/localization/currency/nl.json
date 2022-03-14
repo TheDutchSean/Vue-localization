@@ -1,5 +1,6 @@
 {
-    ".Currency h2":"Number formateren",
-    ".Currency p":"Door het gebruiken van #{variable} kan een nummer als currency geformateerd worden. Deze variable moet in de export van MyView.vue worden geplaatst.",
-    "#Currency-Ex":"#{myNumber}"
+    ".Currency h2":"Valuta formateren",
+    ".Currency p":"Door het gebruiken van <b>#{variable}</b> kan een nummer als valuta geformateerd worden. Deze variable moet in de export van MyView.vue worden geplaatst.",
+    "#Currency-Ex":"#{myNumber}",
+    ".Currency p:nth-child(5)":"Het is ook mogelijk met de VUE Localization Component valuta om te rekenen naar een nieuwe waarden. Afhankelijk van de actuele wisselen koersen. <br> Om deze functie te gebruiken zet enableCurExchange naar true in ../localization/config.json."
 }
